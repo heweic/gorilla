@@ -12,7 +12,7 @@ Client使用服务，需要向注册中心订阅RPC服务，Client根据Registry
 当Server发生变更时，Registry会同步变更，Client感知后会对本地的服务列表作相应调整。
 三者的交互关系如下图：
 
-![avatar][https://raw.githubusercontent.com/heweic/gorilla/master/img/14612349319195.jpg]
+![avatar](/img/14612349319195.jpg)
 
 ## 示例
 
