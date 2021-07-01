@@ -11,7 +11,7 @@ Server提供服务，向Registry注册自身服务，并向注册中心定期发
 Client使用服务，需要向注册中心订阅RPC服务，Client根据Registry返回的服务列表，与具体的Sever建立连接，并进行RPC调用。
 当Server发生变更时，Registry会同步变更，Client感知后会对本地的服务列表作相应调整。
 三者的交互关系如下图：
-![avatar][base64str]
+![image][url_to_image]
 
 ## 示例
 
