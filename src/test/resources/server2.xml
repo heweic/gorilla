@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:gorilla="http://myframe.org/schema/gorilla"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+
+
+
+
+
+		http://myframe.org/schema/gorilla http://myframe.org/schema/gorilla/gorill.xsd">
+
+	<bean id="testServiceImpl" class="org.myframe.gorilla.test.impl.TestServiceImpl" />
+	<bean id="sayHelloImpl" class="org.myframe.gorilla.test.impl.SayHelloImpl"></bean>
+
+	<!-- 注册中心 -->
+	<gorilla:registry ip="127.0.0.1" port="2181" />
+
+	<!--服务列表 -->
+	<gorilla:servicePort value="3937" />
+
+	<gorilla:service interface="org.myframe.gorilla.test.TestService"
+		ref="testServiceImpl" />
+	
+
+
+	<!--依赖调用 -->
+
+
+</beans>

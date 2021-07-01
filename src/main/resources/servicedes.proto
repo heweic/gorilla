@@ -1,0 +1,10 @@
+syntax = "proto3";
+package org.myframe.simplerpc.register;
+
+option java_package = "org.myframe.gorilla.registry";
+option java_outer_classname = "ServiceDes";
+
+message serverInfo{
+	string ipAddr   = 1;
+	int32  port     = 2;
+}

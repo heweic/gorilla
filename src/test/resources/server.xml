@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:gorilla="http://myframe.org/schema/gorilla"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://myframe.org/schema/gorilla http://myframe.org/schema/gorilla/gorill.xsd">
+		
+		
+	<bean id="impl1" class="org.myframe.gorilla.test.impl.Impl1"></bean>
+	<bean id="impl2" class="org.myframe.gorilla.test.impl.Impl2"></bean>
+	<bean id="impl3" class="org.myframe.gorilla.test.impl.Impl3"></bean>
+	<bean id="impl4" class="org.myframe.gorilla.test.impl.Impl4"></bean>
+	<bean id="impl5" class="org.myframe.gorilla.test.impl.Impl5"></bean>
+
+	<!-- 注册中心 -->
+	<gorilla:registry ip="127.0.0.1" port="2181" />
+
+	<!--服务端口 -->
+	<gorilla:servicePort value="3936" />
+	
+	<!--服务列表 -->
+	<gorilla:service interface="org.myframe.gorilla.test.inter.Inter1" ref="impl1" />
+	<gorilla:service interface="org.myframe.gorilla.test.inter.Inter2" ref="impl2" />
+	<gorilla:service interface="org.myframe.gorilla.test.inter.Inter3" ref="impl3" />
+	<gorilla:service interface="org.myframe.gorilla.test.inter.Inter4" ref="impl4" />
+	<gorilla:service interface="org.myframe.gorilla.test.inter.Inter5" ref="impl5" />
+	<!--依赖调用 -->
+
+</beans>

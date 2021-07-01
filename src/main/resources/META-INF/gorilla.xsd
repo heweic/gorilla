@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns="http://myframe.org/schema/gorilla"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://myframe.org/schema/gorilla">
+
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+	<xsd:import
+		namespace="http://www.springframework.org/schema/tool" />
+	<xsd:import
+		namespace="http://www.springframework.org/schema/beans" />
+
+	<xsd:element name="registry">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 注册中心配置 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="ip" type="xsd:string"
+				use="required">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[ 服务注册中心IP地址 ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="port" type="xsd:int"
+				use="required">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[ 服务注册中心端口 ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="servicePort">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 暴漏服务端口 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="value" type="xsd:int"
+				use="required">
+				<xsd:annotation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="service">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 暴漏服务配置 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="interface" type="xsd:string"
+				use="required">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[ 服务接口 ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="ref" type="xsd:string"
+				use="required">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[ 接口实现对象引用 ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="referer">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 依赖调用接口配置]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:string"
+				use="required">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[ 本地实例ID ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="interface" type="xsd:string"
+				use="required">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[ 调用接口 ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+			<xsd:attribute name="diyNode" type="xsd:string"
+				use="optional">
+				<xsd:annotation>
+					<xsd:documentation><![CDATA[  ]]></xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
