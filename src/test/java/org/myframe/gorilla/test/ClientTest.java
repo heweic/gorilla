@@ -14,6 +14,12 @@ public class ClientTest {
 
 	private org.apache.log4j.Logger log = LogManager.getLogger(ClientTest.class);
 
+	
+	public void test() {
+		ApplicationContext  context = new ClassPathXmlApplicationContext(new String[] { "classpath*:client.xml" });
+		
+		System.out.println(context.getBean(Inter1.class).test("111"));
+	}
 	/**
 	 * @param args
 	 */
