@@ -1,11 +1,11 @@
 package org.myframe.gorilla.transport;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.myframe.gorilla.exception.BaseException;
 import org.myframe.gorilla.rpc.Provider;
 import org.myframe.gorilla.rpc.Request;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 服务路由
@@ -15,7 +15,7 @@ public abstract class AbstractRouter implements MessageHandler {
 	/**
 	 * 所有服务者
 	 */
-	private Map<String, Provider<?>> providers = new HashMap<String, Provider<?>>();
+	private ConcurrentHashMap<String, Provider<?>> providers = new ConcurrentHashMap<String, Provider<?>>();
 
 	/**
 	 * 查找服务者
