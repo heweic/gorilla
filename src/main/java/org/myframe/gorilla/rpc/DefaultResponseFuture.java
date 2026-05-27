@@ -5,8 +5,6 @@ import org.myframe.gorilla.exception.CallTimeOutException;
 
 public class DefaultResponseFuture implements ResponseFuture, Response {
 
-	// private volatile CountDownLatch countDownLatch = new CountDownLatch(1);
-
 	private final Object lock = new Object();
 
 	private FutureState state = FutureState.DOING;
@@ -131,31 +129,6 @@ public class DefaultResponseFuture implements ResponseFuture, Response {
 		}
 	}
 
-	private Object getValueOrThrowable() {
-
-		return result;
-	}
-
-	@Override
-	public Exception getException() {
-		return exception;
-	}
-
-	@Override
-	public long getRequestId() {
-		return request.getRequestId();
-	}
-
-	@Override
-	public long getProcessTime() {
-		return processTime;
-	}
-
-	@Override
-	public void setProcessTime(long time) {
-		processTime = time;
-	}
-
 	@Override
 	public void onSuccess(Response response) {
 		this.result = response.getValue();
@@ -179,8 +152,34 @@ public class DefaultResponseFuture implements ResponseFuture, Response {
 			state = FutureState.DONE;
 			lock.notifyAll();
 		}
+		
 
 		return true;
+	}
+
+	private Object getValueOrThrowable() {
+
+		return result;
+	}
+
+	@Override
+	public Exception getException() {
+		return exception;
+	}
+
+	@Override
+	public long getRequestId() {
+		return request.getRequestId();
+	}
+
+	@Override
+	public long getProcessTime() {
+		return processTime;
+	}
+
+	@Override
+	public void setProcessTime(long time) {
+		processTime = time;
 	}
 
 	@Override

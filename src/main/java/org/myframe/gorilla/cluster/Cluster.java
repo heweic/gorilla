@@ -25,5 +25,9 @@ public interface Cluster<T> extends Caller<T> {
 	 *  */
 	public void onRefresh(List<Referer<T>> list);
 
+	/**
+	 * 
+	 * @param referer
+	 */
 	public void addReferer(Referer<T> referer);
 }

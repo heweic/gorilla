@@ -13,7 +13,6 @@ import org.myframe.gorilla.rpc.Referer;
 import org.myframe.gorilla.rpc.URL;
 import org.myframe.gorilla.transport.Client;
 import org.myframe.gorilla.transport.EndpointFactory;
-import org.myframe.gorilla.utils.ZkUtils;
 
 /**
  * 引用配置
@@ -64,7 +63,7 @@ public abstract class RefererConfig<T> extends AbstractConfig {
 			String host = diyNode.split(":")[0];
 			int port = Integer.parseInt(diyNode.split(":")[1]);
 			URL url = new URL(host, port, interfaceClass.getName());
-			
+
 			EndpointFactory factory = ExtensionLoader.getExtensionLoader(EndpointFactory.class)
 					.getExtension(GorillaConstants.DEFAULT_VALUE);
 			Client client = factory.createClient(url);

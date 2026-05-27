@@ -11,6 +11,7 @@ public class RoundRobinRouter<T> implements Router<T> {
 
 	@Override
 	public Referer<T> doWwitch(List<Referer<T>> referers) {
+		
 		int index = getNextPositive();
 
 		for (int i = 0; i < referers.size(); i++) {
